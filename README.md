@@ -58,7 +58,7 @@ Right answer! Check the wrong answer to learn why that is.
 Add [PostCSS Custom Properties Fallback] to your project:
 
 ```bash
-npm install postcss-custom-properties--fallback --save-dev
+npm install postcss-custom-properties-fallback --save-dev
 ```
 
 Use it as a [PostCSS] plugin:
