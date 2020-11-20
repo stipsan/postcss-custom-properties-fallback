@@ -76,7 +76,7 @@ postcss([postcssCustomPropertiesFallback(/* pluginOptions */)]).process(
 
 ### importFrom
 
-The `importFrom` option works [exactly](https://github.com/postcss/postcss-custom-properties/blob/master/README.md#importfrom) like [CSS Custom Properties], and is required for this plugin to do anything.
+The `importFrom` option is required. It works [like](https://github.com/postcss/postcss-custom-properties/blob/master/README.md#importfrom) from [CSS Custom Properties], except it doesn't support importing from CSS [yet](https://github.com/stipsan/postcss-custom-properties-fallback/blob/153ed0bed5684641e466a8c0197abbe587144f8b/src/import-from.js#L11).
 
 ```js
 postcssCustomPropertiesFallback({
