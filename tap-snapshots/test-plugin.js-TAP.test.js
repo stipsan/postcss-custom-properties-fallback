@@ -5,7 +5,15 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/plugin.js TAP plugin() - simple module - should replace normalize.css with CDN URL > simple example 1`] = `
+exports[`test/plugin.js TAP plugin() - resurcive module - should replace normalize.css with CDN URL > recursive example 1`] = `
+
+.test {
+  color: var(--primary, var(--color, black));
+}
+
+`
+
+exports[`test/plugin.js TAP plugin() - simple module > simple example 1`] = `
 
 .test {
   color: var(--color, black);

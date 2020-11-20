@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/stipsan/postcss-custom-properties-fallback/issues"
   },
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "dist/plugin.js",
   "files": [
     "dist"

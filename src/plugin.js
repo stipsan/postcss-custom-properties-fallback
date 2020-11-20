@@ -4,6 +4,7 @@ const valueParser = require('postcss-value-parser');
 // match custom property inclusions
 // @TODO optimize to skip vars with fallbacks already
 const customPropertiesRegExp = /(^|[^\w-])var\([\W\w]+\)/;
+// var\([\W\w]+,[\W\w]+\) template for detecting if skippable?
 
 // whether the declaration should be potentially transformed
 const isTransformableDecl = (decl) => customPropertiesRegExp.test(decl.value);
@@ -33,7 +34,6 @@ module.exports = (opts) => ({
             if (fallback) {
               node.nodes.push(
                 { type: 'divider', value: ',' },
-                { type: 'space', value: ' ' },
                 { type: 'word', value: fallback }
               );
             }
