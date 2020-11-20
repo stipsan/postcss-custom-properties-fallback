@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "microbundle ./src/* --target node -f cjs",
     "prepare": "npm run -s build",
     "test": "tap test/*.js --no-coverage",
     "test:snapshot": "TAP_SNAPSHOT=1 tap test/*.js --no-coverage"
@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "eslint": "^7.13.0",
+    "microbundle": "^0.12.4",
     "postcss": "^8.1.8",
-    "rollup": "^2.33.2",
     "tap": "^14.10.8"
   },
   "keywords": [

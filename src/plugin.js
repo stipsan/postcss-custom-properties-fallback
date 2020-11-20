@@ -1,4 +1,4 @@
-const getCustomPropertiesFromImports = require('./import-from');
+const getCustomPropertiesFromImports = require('./import-from.js');
 
 const valueParser = require('postcss-value-parser');
 // match custom property inclusions
