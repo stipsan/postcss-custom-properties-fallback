@@ -1,0 +1,51 @@
+{
+  "name": "postcss-custom-properties-fallback",
+  "description": "",
+  "license": "MIT",
+  "author": "Cody Olsen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stipsan/postcss-custom-properties-fallback.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stipsan/postcss-custom-properties-fallback/issues"
+  },
+  "version": "0.1.0",
+  "main": "dist/plugin.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run -s build",
+    "test": "tap test/*.js --no-coverage",
+    "test:snapshot": "TAP_SNAPSHOT=1 tap test/*.js --no-coverage"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.1.8",
+    "rollup": "^2.33.2",
+    "tap": "^14.10.8"
+  },
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "custom",
+    "properties",
+    "declarations",
+    "variables",
+    "vars",
+    "w3c",
+    "csswg",
+    "specification"
+  ],
+  "prettier": {
+    "singleQuote": true
+  },
+  "dependencies": {
+    "postcss-values-parser": "^4.0.0"
+  }
+}
