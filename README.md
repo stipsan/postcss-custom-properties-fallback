@@ -53,6 +53,50 @@ Right answer! Check the wrong answer to learn why that is.
 
 </details>
 
+## Usage
+
+Add [PostCSS Custom Properties Fallback] to your project:
+
+```bash
+npm install postcss-custom-properties--fallback --save-dev
+```
+
+Use it as a [PostCSS] plugin:
+
+```js
+const postcss = require('postcss');
+const postcssCustomPropertiesFallback = require('postcss-custom-properties-fallback');
+
+postcss([postcssCustomPropertiesFallback(/* pluginOptions */)]).process(
+  YOUR_CSS /*, processOptions */
+);
+```
+
+## Options
+
+### importFrom
+
+The `importFrom` option works [exactly](https://github.com/postcss/postcss-custom-properties/blob/master/README.md#importfrom) like [CSS Custom Properties], and is required for this plugin to do anything.
+
+```js
+postcssCustomPropertiesFallback({
+  importFrom: { customProperties: { '--color': 'red' } },
+});
+```
+
+```pcss
+h1 {
+  color: var(--color);
+}
+
+/* becomes */
+
+h1 {
+  color: var(--color, red);
+}
+```
+
 [css custom properties]: https://www.w3.org/TR/css-variables-1/
 [postcss]: https://github.com/postcss/postcss
 [postcss custom properties]: https://github.com/postcss/postcss-custom-properties
+[postcss custom properties fallback]: https://github.com/stipsan/postcss-custom-properties-fallback
