@@ -1,6 +1,6 @@
 {
   "name": "postcss-custom-properties-fallback",
-  "description": "",
+  "description": "Adds fallbacks to your CSS var() functions",
   "license": "MIT",
   "author": "Cody Olsen",
   "repository": {
@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/stipsan/postcss-custom-properties-fallback/issues"
   },
-  "version": "0.1.2",
+  "version": "1.0.0",
   "main": "dist/plugin.js",
   "files": [
     "dist"
