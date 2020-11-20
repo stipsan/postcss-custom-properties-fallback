@@ -4,7 +4,7 @@ This plugins adds fallbacks to your [CSS Custom Properties] and works well as a 
 
 ## Pop Quiz!
 
-If the following change happens, what color will `h1` have in modern browsers?
+If we remove `--color` from `:root`, what color will `h1` have in modern browsers?
 
 ```diff
 :root {
