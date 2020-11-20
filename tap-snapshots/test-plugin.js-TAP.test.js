@@ -8,7 +8,7 @@
 exports[`test/plugin.js TAP plugin() - resurcive module - should replace normalize.css with CDN URL > recursive example 1`] = `
 
 .test {
-  color: var(--primary, var(--color, black));
+  color: var(--primary, var(--color,black));
 }
 
 `
@@ -16,9 +16,9 @@ exports[`test/plugin.js TAP plugin() - resurcive module - should replace normali
 exports[`test/plugin.js TAP plugin() - simple module > simple example 1`] = `
 
 .test {
-  color: var(--color, black);
+  color: var(--color,black);
   background-color: var(--primary, blue);
-  outline-color: var(--primary, yellow);
+  outline-color: var(--primary,yellow);
 }
 
 `
