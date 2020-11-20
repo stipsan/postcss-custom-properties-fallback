@@ -4,7 +4,9 @@ import plugin from '../src/plugin';
 
 const simple = `
 .test {
-	color: var(--color);
+  color: var(--color);
+  background-color: var(--primary, blue);
+  outline-color: var(--primary);
 }
 `;
 /*
@@ -18,7 +20,9 @@ tap.test(
   async (t) => {
     const { css } = await postcss(
       plugin({
-        importFrom: { customProperties: { '--color': 'black' } },
+        importFrom: {
+          customProperties: { '--color': 'black', '--primary': 'yellow' },
+        },
       })
     ).process(simple, { from: undefined });
 

@@ -8,7 +8,9 @@
 exports[`test/plugin.js TAP plugin() - simple module - should replace normalize.css with CDN URL > simple example 1`] = `
 
 .test {
-	color: var(--color, black);
+  color: var(--color, black);
+  background-color: var(--primary, blue);
+  outline-color: var(--primary, yellow);
 }
 
 `
