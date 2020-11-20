@@ -22,24 +22,35 @@ h1 {
 
 ```
 
+### Red or green, expand the right answer (no cheating/googling!):
+
 <details>
-  <summary><h2><code>h1</code> is <code>red</code></h2></summary>
-  <p>
-    <img src="https://user-images.githubusercontent.com/81981/99829641-d6766100-2b5c-11eb-9d0d-efaa7e45cd1b.gif" alt="The text 'Wrong answer!' over a cat screaming while firing an automatic rifle">
-  </p>
-  <p>
-    Nope, it's <code>green</code>!
-  </p>
+  <summary><code>h1</code> is <code>red</code></summary>
+
+![The text "Wrong answer!" over a cat screaming while firing an automatic rifle](https://user-images.githubusercontent.com/81981/99829641-d6766100-2b5c-11eb-9d0d-efaa7e45cd1b.gif)
+
+Nope, it's `green`!
+
+Intuitively it's easy to think that if `--color` isn't defined, then the browser should skip the `color: var(--color)` and use the valid `color: red` above it.
+Especially since this is what happens in [older browsers](https://caniuse.com/css-variables) that don't support [CSS Custom Properties].
+
+The right answer is to use the second argument in `var()` (see [Example 10 in the spec](https://www.w3.org/TR/css-variables-1/#example-8bfb9889)), also known as the fallback argument:
+
+```css
+color: var(--color, red);
+```
+
+Now it works like expected. See the spec for [more information on how invalid/missing values are treated](https://www.w3.org/TR/css-variables-1/#invalid-variables).
+
 </details>
 
 <details>
-  <summary><h2><code>h1</code> is <code>green</code></h2></summary>
-  <p>
-    <img src="https://user-images.githubusercontent.com/81981/99828721-9d89bc80-2b5b-11eb-9c73-9628a678194b.gif" alt="The text 'Yes!' over a smiling and nodding Jack Nicholson">
-  </p>
-  <p>
-    Yes that's correct! If you guessed the right answer and don't know why the <code>h1</code> isn't red, then check the wrong answer to learn why.
-  </p>
+  <summary><code>h1</code> is <code>green</code></summary>
+
+![The text "Yes!" over a smiling and nodding Jack Nicholson](https://user-images.githubusercontent.com/81981/99828721-9d89bc80-2b5b-11eb-9c73-9628a678194b.gif)
+
+Right answer! Check the wrong answer to learn why that is.
+
 </details>
 
 [css custom properties]: https://www.w3.org/TR/css-variables-1/
