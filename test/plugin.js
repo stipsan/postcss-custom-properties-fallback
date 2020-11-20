@@ -18,7 +18,7 @@ tap.test(
   async (t) => {
     const { css } = await postcss(
       plugin({
-        // @TODO
+        importFrom: { customProperties: { '--color': 'black' } },
       })
     ).process(simple, { from: undefined });
 

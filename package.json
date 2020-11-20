@@ -22,7 +22,8 @@
     "test:snapshot": "TAP_SNAPSHOT=1 tap test/*.js --no-coverage"
   },
   "dependencies": {
-    "postcss-value-parser": "^4.1.0"
+    "postcss-value-parser": "^4.1.0",
+    "postcss-values-parser": "^4.0.0"
   },
   "peerDependencies": {
     "postcss": "^8.0.0"
