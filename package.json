@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "eslint": "^7.13.0",
-    "microbundle": "^0.13.0",
+    "microbundle": "^0.14.0",
     "postcss": "^8.1.8",
     "tap": "^14.10.8"
   },
