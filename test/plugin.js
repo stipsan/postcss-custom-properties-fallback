@@ -1,6 +1,6 @@
-import tap from 'tap';
-import postcss from 'postcss';
-import plugin from '../src/plugin';
+const tap = require('tap')
+const postcss = require('postcss');
+const plugin = require('../src/plugin');
 
 const simple = `
 .test {
@@ -13,6 +13,12 @@ const simple = `
 const recursive = `
 .test {
   color: var(--primary, var(--color));
+}
+`;
+
+const list = `
+.test {
+  box-shadow: var(--shadow-depth-1);
 }
 `;
 /*
@@ -46,6 +52,22 @@ tap.test(
     ).process(recursive, { from: undefined });
 
     t.matchSnapshot(clean(css), 'recursive example');
+    t.end();
+  }
+);
+
+tap.test(
+  'plugin() - list module - should replace the layered box-shadow correctly',
+  async (t) => {
+    const { css } = await postcss(
+      plugin({
+        importFrom: {
+          customProperties: { '--shadow-depth-1': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' },
+        },
+      })
+    ).process(list, { from: undefined });
+
+    t.matchSnapshot(clean(css), 'list example');
     t.end();
   }
 );
