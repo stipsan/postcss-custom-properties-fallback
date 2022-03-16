@@ -22,17 +22,17 @@
     "test:snapshot": "TAP_SNAPSHOT=1 tap test/*.js --no-coverage"
   },
   "dependencies": {
-    "postcss-value-parser": "^4.1.0",
-    "postcss-values-parser": "^6.0.0"
+    "postcss-value-parser": "^4.2.0",
+    "postcss-values-parser": "^6.0.2"
   },
   "peerDependencies": {
     "postcss": "^8.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
-    "microbundle": "^0.14.0",
-    "postcss": "^8.1.8",
-    "tap": "^14.10.8"
+    "eslint": "^8.11.0",
+    "microbundle": "^0.14.2",
+    "postcss": "^8.4.12",
+    "tap": "^16.0.0"
   },
   "keywords": [
     "css",
