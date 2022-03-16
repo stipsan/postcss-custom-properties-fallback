@@ -34,7 +34,7 @@ Nope, it's `green`!
 Intuitively it's easy to think that if `--color` isn't defined, then the browser should skip the `color: var(--color)` and use the valid `color: red` above it.
 Especially since this is what happens in [older browsers](https://caniuse.com/css-variables) that don't support [CSS Custom Properties].
 
-The right answer is to use the second argument in `var()` (see [Example 10 in the spec](https://www.w3.org/TR/css-variables-1/#example-8bfb9889)), also known as the fallback argument:
+The right answer is to use the second argument in `var()` (see [Example 10 in the spec](https://www.w3.org/TR/2015/CR-css-variables-1-20151203/#substitute-a-var)), also known as the fallback argument:
 
 ```css
 color: var(--color, red);
