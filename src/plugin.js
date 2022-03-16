@@ -9,6 +9,8 @@ const customPropertiesRegExp = /(^|[^\w-])var\([\W\w]+\)/;
 // whether the declaration should be potentially transformed
 const isTransformableDecl = (decl) => customPropertiesRegExp.test(decl.value);
 
+const { nodeToString } = require('postcss-values-parser');
+
 // eslint-disable-next-line no-empty-pattern
 module.exports = (opts) => ({
   postcssPlugin: 'postcss-custom-properties-fallback',
@@ -31,10 +33,33 @@ module.exports = (opts) => ({
               return;
             }
             const fallback = customProperties[node.nodes[0].value];
-            if (fallback) {
+
+            if (fallback && fallback.length === 1) {
               node.nodes.push(
-                { type: 'divider', value: ',' },
-                { type: 'word', value: fallback }
+                {
+                  type: 'divider',
+                  value: ',',
+                },
+                {
+                  type: 'word',
+                  value: fallback,
+                }
+              );
+            }
+
+            //when fallback value contains more then one node, stringify them with value parser used to parse the customProperties object and add as one node type word.
+            if (fallback && fallback.length > 1) {
+              node.nodes.push(
+                {
+                  type: 'divider',
+                  value: ',',
+                },
+                {
+                  type: 'word',
+                  value: fallback
+                    .map((fallbackNode) => nodeToString(fallbackNode))
+                    .join(' '),
+                }
               );
             }
           });
