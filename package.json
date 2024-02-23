@@ -29,10 +29,10 @@
     "postcss": "^8.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.11.0",
-    "microbundle": "^0.15.0",
+    "eslint": "^8.57.0",
+    "microbundle": "^0.15.1",
     "postcss": "^8.4.12",
-    "tap": "^16.0.0"
+    "tap": "^16.3.10"
   },
   "keywords": [
     "css",
